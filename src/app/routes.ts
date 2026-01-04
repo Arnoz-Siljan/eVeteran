@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import NewApplication from "./pages/NewApplication";
 import ApplicationStatus from "./pages/ApplicationStatus";
 import AdminDashboard from "./pages/AdminDashboard";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import CookiePolicy from "./pages/CookiePolicy";
 import NotFound from "./pages/NotFound";
 
 export const router = createBrowserRouter([
@@ -15,7 +17,12 @@ export const router = createBrowserRouter([
       { path: "vloga/nova", Component: NewApplication },
       { path: "vloga/status", Component: ApplicationStatus },
       { path: "admin", Component: AdminDashboard },
+      { path: "zasebnost", Component: PrivacyPolicy },
+      { path: "piskotki", Component: CookiePolicy },
       { path: "*", Component: NotFound },
     ],
   },
-]);
+], {
+  basename: "/eVeteran"
+});
+

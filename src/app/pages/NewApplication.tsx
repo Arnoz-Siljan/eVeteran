@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, Link } from "react-router";
 import { Check, ChevronLeft, ChevronRight, Upload, X } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
@@ -8,6 +8,7 @@ import { Label } from "../components/ui/label";
 import { Textarea } from "../components/ui/textarea";
 import { Progress } from "../components/ui/progress";
 import { RadioGroup, RadioGroupItem } from "../components/ui/radio-group";
+import { Checkbox } from "../components/ui/checkbox";
 import { toast } from "sonner";
 
 export default function NewApplication() {
@@ -25,6 +26,7 @@ export default function NewApplication() {
     militaryUnit: "",
     reason: "",
     documents: [] as File[],
+    gdprConsent: false,
   });
 
   const totalSteps = 4;
@@ -301,6 +303,38 @@ export default function NewApplication() {
                     Status vloge lahko spremljate v zavihku "Status vloge".
                   </p>
                 </div>
+
+                {/* GDPR Obvestilo o obdelavi podatkov */}
+                <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg">
+                  <h4 className="font-semibold mb-2 text-amber-800">Obvestilo o obdelavi osebnih podatkov</h4>
+                  <p className="text-sm text-slate-600 mb-3">
+                    Vaše osebne podatke (ime, priimek, datum rojstva, naslov, kontaktni podatki, podatki o vojaški službi) 
+                    bo obdeloval Ministrstvo za obrambo RS za namen obdelave vaše vloge za status veterana. 
+                    Podatki se posredujejo v Centralni register prebivalstva za preverjanje identitete.
+                    Podrobne informacije o obdelavi najdete v naši{" "}
+                    <Link to="/zasebnost" className="text-blue-600 hover:underline">izjavi o zasebnosti</Link>.
+                  </p>
+                </div>
+
+                {/* Privolitev */}
+                <div className="border border-slate-200 p-4 rounded-lg">
+                  <div className="flex items-start space-x-3">
+                    <Checkbox 
+                      id="gdprConsent" 
+                      checked={formData.gdprConsent}
+                      onCheckedChange={(checked) => setFormData({ ...formData, gdprConsent: checked as boolean })}
+                    />
+                    <div className="space-y-1">
+                      <Label htmlFor="gdprConsent" className="font-normal cursor-pointer">
+                        Potrjujem, da sem seznanjen/a z <Link to="/zasebnost" className="text-blue-600 hover:underline">izjavo o zasebnosti</Link> in 
+                        se strinjam z obdelavo mojih osebnih podatkov za namen obravnave vloge za status veterana. *
+                      </Label>
+                      <p className="text-xs text-slate-500">
+                        Brez privolitve vloge ni mogoče oddati.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             )}
 
@@ -319,7 +353,7 @@ export default function NewApplication() {
                   Naprej <ChevronRight className="size-4 ml-1" />
                 </Button>
               ) : (
-                <Button onClick={handleSubmit}>
+                <Button onClick={handleSubmit} disabled={!formData.gdprConsent}>
                   Oddaj vlogo <Check className="size-4 ml-1" />
                 </Button>
               )}

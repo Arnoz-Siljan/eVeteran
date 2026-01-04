@@ -3,10 +3,10 @@ import { Bell, Menu, User, Shield, FileText } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Badge } from "../components/ui/badge";
 import { Sheet, SheetContent, SheetTrigger } from "../components/ui/sheet";
+import CookieBanner from "../components/CookieBanner";
 
 export default function Root() {
   const location = useLocation();
-  const isAdmin = location.pathname.startsWith("/admin");
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
@@ -123,7 +123,8 @@ export default function Root() {
             <div>
               <h3 className="font-semibold mb-3">Pravne informacije</h3>
               <ul className="space-y-2 text-sm text-slate-300">
-                <li><a href="#" className="hover:text-white">Varstvo osebnih podatkov</a></li>
+                <li><Link to="/zasebnost" className="hover:text-white">Izjava o zasebnosti</Link></li>
+                <li><Link to="/piskotki" className="hover:text-white">Piškotki</Link></li>
                 <li><a href="#" className="hover:text-white">Pogoji uporabe</a></li>
               </ul>
             </div>
@@ -133,6 +134,9 @@ export default function Root() {
           </div>
         </div>
       </footer>
+
+      {/* Cookie Banner */}
+      <CookieBanner />
     </div>
   );
 }
