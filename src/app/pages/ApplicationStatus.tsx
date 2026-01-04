@@ -6,7 +6,6 @@ import { Button } from "../components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
 import { Alert, AlertDescription } from "../components/ui/alert";
 
-// Mock data
 const mockApplications = [
   {
     id: "VET-2025-001",

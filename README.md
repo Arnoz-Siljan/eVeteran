@@ -123,19 +123,5 @@ eVeteran/
 └── vite.config.ts        # Vite konfiguracija
 ```
 
-## Opombe za produkcijo
 
-Ta aplikacija je **prototip** in trenutno uporablja:
-- Mock podatke (brez prave baze podatkov)
-- Lokalno shranjevanje dokumentov
-- Simulirano avtentikacijo
 
-Za produkcijsko uporabo bi bilo potrebno dodati:
-- Backend sistem (npr. Supabase, Node.js)
-- Pravo avtentikacijo in avtorizacijo
-- Shranjevanje dokumentov v oblaku
-- Integracijo z MORS sistemi
-
-## Licenca
-
-© 2026 Ministrstvo za obrambo Republike Slovenije

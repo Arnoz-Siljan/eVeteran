@@ -7,7 +7,6 @@ export default function CookieBanner() {
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
-    // Preveri ali je uporabnik že sprejel piškotke
     const consent = localStorage.getItem("cookie_consent");
     if (!consent) {
       setShowBanner(true);
