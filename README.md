@@ -4,12 +4,12 @@ Spletna aplikacija za slovensko Ministrstvo za obrambo (MORS), ki omogoča veter
 
 ## Funkcionalnosti
 
-- 📝 **Prijava za status**: Večstopenjski obrazec za prijavo veteranskega statusa
-- 📄 **Nalaganje dokumentov**: Digitalno nalaganje potrebne dokumentacije
-- 📊 **Sledenje statusu**: Preverjanje statusa prijave v realnem času
-- 👨‍💼 **Administratorski panel**: Pregled in odločanje o prijavah (MORS)
-- 🔔 **Obvestila**: Sistem obvestil za spremembe statusa
-- 📱 **Responsive**: Prilagojeno za mobilne naprave in namizja
+-  **Prijava za status**: Večstopenjski obrazec za prijavo veteranskega statusa
+-  **Nalaganje dokumentov**: Digitalno nalaganje potrebne dokumentacije
+-  **Sledenje statusu**: Preverjanje statusa prijave v realnem času
+-  **Administratorski panel**: Pregled in odločanje o prijavah (MORS)
+-  **Obvestila**: Sistem obvestil za spremembe statusa
+-  **Responsive**: Prilagojeno za mobilne naprave in namizja
 
 ## Tehnologije
 
@@ -46,7 +46,7 @@ git push -u origin main
 
 ### 3. Posodobitev base poti
 
-⚠️ **POMEMBNO**: V datoteki `vite.config.ts` posodobite `base` vrednost:
+ **POMEMBNO**: V datoteki `vite.config.ts` posodobite `base` vrednost:
 
 ```typescript
 // Če je vaš repo: https://github.com/username/eVeteran
